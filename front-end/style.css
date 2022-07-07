@@ -29,14 +29,24 @@
 
 aside {
     color: #fff;
-    width: 150px;
+    width: 12%;
     padding-left: 15px;
     height: 100vh;
     background-color: #F24C4C;
     border-top-right-radius: 20px;
-    position: fixed;
+    -ms-wrap-flow: both;
 }
 
+.body-container {
+    display: flex;
+}
+
+.content-container {
+    flex: 1;
+    margin-left: none;
+    width: 88%;
+    border: 1px solid red;
+}
 
 aside a {
     font-size: 14px;

@@ -28,12 +28,23 @@
 
 aside {
   color: #fff;
-  width: 150px;
+  width: 12%;
   height: 100vh;
+  -ms-wrap-flow: both;
   background-color: #f24c4c;
   border-top-right-radius: 20px;
   padding-left: 15px;
-  position: fixed;
+}
+
+.body-container {
+  display: flex;
+}
+
+.content-container {
+  margin-left: none;
+  width: 88%;
+  border: 1px solid red;
+  flex: 1;
 }
 
 aside a {
