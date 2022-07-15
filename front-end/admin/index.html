@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <input type="text" id="login-username" placeholder="username"/>
+    <label for="login-username">Username:</label>
+    <input type="password" id="login-password">
+    <label for="login-password">Password: </label>
+
+    <button onclick="checkLogin()">Login</button>
+    
+
+    <script>
+        function checkLogin() {
+
+            let username = document.getElementById("login-username").value;
+            let password = document.getElementById("login-password").value;
+
+            let url = window.location.href;
+
+            console.log(username, password, url)
+
+            console.log("the button works")
+        }
+    </script>
+</body>
+</html>
