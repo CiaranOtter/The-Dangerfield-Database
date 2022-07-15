@@ -15,19 +15,31 @@
 
     <button onclick="checkLogin()">Login</button>
     
+    <script type="module">
+        import {data} from '../data.js';
+        console.log(data)
 
-    <script>
+        window.checkLogin = checkLogin;
+
         function checkLogin() {
 
             let username = document.getElementById("login-username").value;
             let password = document.getElementById("login-password").value;
 
-            let url = window.location.href;
-
-            console.log(username, password, url)
-
-            console.log("the button works")
+            fetch(data.url_backend+`login.php?user=${username}&&pass=${password}`)
+            .then(data => data.json())
+            .then(res => {
+                console.log(res[0])
+                if (res[0].Valid == 1) {
+                    console.log("success")
+                    let url = window.location.href;
+                    url = url.replace("/admin/", "");
+                    localStorage.setItem("admin", true)
+                    window.location.href = url
+                }
+            })
         }
     </script>
+    
 </body>
 </html>
