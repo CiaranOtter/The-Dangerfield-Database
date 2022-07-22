@@ -4,9 +4,10 @@ console.log(admin)
 
 
 
-class editMenu {
+class Block {
     constructor() {
         this.components = [];
+        this.dragItem = "";
         // this.editMenu = document.createElement("div");
         // this.
         // this.editMenu.id = "editMenu"
@@ -20,6 +21,19 @@ class editMenu {
         //     width: "100%",
         //     height: "100%",
         // }
+    }
+
+    setDragItem(Item) {
+        this.dragItem = Item;
+    }
+
+    addComponent() {
+        let comp;
+        if (this.dragItem == "text") {
+            console.log("adduing a new Text component")
+            comp = new textComponent();
+            this.components.appendChild
+        }
     }
 
     test() {
@@ -58,6 +72,12 @@ class VideoComponent extends Component{
     }
 }
 
+class textComponent extends Component {
+    constructor() {
+        super();
+    }
+}
+
 window.newBlock = newBlock;
 window.showEditMenu = showEditMenu;
 window.hideEditMenu = hideEditMenu;
@@ -65,6 +85,9 @@ window.addBlock = addBlock;
 window.saveCategory = saveCategory;
 window.Initialise= Initialise;
 window.logout = logout;
+window.setdragItem = setdragItem;
+window.dragHover = dragHover;
+window.dragHoverEnd = dragHoverEnd;
 
 import {data} from "./data.js";
 
@@ -73,6 +96,7 @@ function newBlock() {
 }
 
 
+let block = new Block();
 
 function showEditMenu() {
     let editScreen = document.getElementById("editMenu");
@@ -151,4 +175,19 @@ function Initialise() {
 function logout() {
     window.localStorage.removeItem("admin");
     location.reload();
+}
+
+function dragHover() {
+    console.log("the item has been dragged over the drop zone")
+    document.getElementById("drop-zone").classList.add("drop-zone-active");
+}
+
+function setdragItem(item) {
+    console.log("drag Item being set")
+    block.setDragItem(item);
+}
+
+function dragHoverEnd() {
+    console.log("draggable has left the drop zone");
+    document.getElementById("drop-zone").classList.remove("drop-zone-active");
 }

@@ -115,13 +115,24 @@ It goes hand in hand with the script.js file and styles.css file -
             <div class="sub-title centered-text">Sub heading</div>
           </div>
           <div class="new-block-body">
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <p style="grid-column-start: 1; grid-column-end:3;">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
             <img src="./img/template.jpg" width="200">
           </div>
+
+          <div class="drop-zone" id="drop-zone" ondragleave="dragHoverEnd()" ondragenter="dragHover()">ADD</div>
+
         </div>
         <div id="design-side-menu" class="design-side-menu">
           <div class="sub-title">Design a lesson:</div>
-  
+          <div class="design-tab" draggable="true" ondrag="setdragItem('text')"> 
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M24 42v-3.55l10.8-10.8 3.55 3.55L27.55 42ZM6 31.5v-3h15v3Zm34.5-2.45-3.55-3.55 1.45-1.45q.4-.4 1.05-.4t1.05.4l1.45 1.45q.4.4.4 1.05t-.4 1.05ZM6 23.25v-3h23.5v3ZM6 15v-3h23.5v3Z"/></svg>
+            <p>Add new text block</p>
+          </div>
+
+          <div class="design-tab" draggable="true" ondrag="setdragItem('img')">
+            <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M29.45 6v3H9v30h30V18.6h3V39q0 1.2-.9 2.1-.9.9-2.1.9H9q-1.2 0-2.1-.9Q6 40.2 6 39V9q0-1.2.9-2.1Q7.8 6 9 6ZM38 6v4.05h4.05v3H38v4.05h-3v-4.05h-4.05v-3H35V6ZM12 33.9h24l-7.2-9.6-6.35 8.35-4.7-6.2ZM9 9v30V9Z"/></svg>
+            <p>Add a new image</p>
+          </div>
         </div>
 
         <div class="button-container" id="new-Category-button-container">
