@@ -9,9 +9,112 @@
   background-color: #FCBF49;
   border-radius: 10px;
   padding: 10px 250px;
+  display: none;
   /* box-shadow: -5px 1px 10px 3px rgba(158,158,158,1);
   -webkit-box-shadow: -5px 1px 11px 3px rgba(158,158,158,1);
   -moz-box-shadow: -5px 1px 10px 3px rgba(158,158,158,1); */
+}
+
+.design-side-menu {
+  border: 1px solid red;
+  float: right;
+  background: #ffffff;
+  height: 100%;
+}
+
+.new-block-container {
+  display: none;
+}
+
+.logout {
+  position: absolute;
+  top: 20px;
+  left: 95%;
+  /* transform: translate(-100%); */
+  margin: 20px;
+  background-color: #FCBF49;
+  display: none;
+}
+.button-container {
+  display: flex;
+  flex-direction: row;
+  border: 1px solid green;
+  margin: auto;
+  width: fit-content;
+}
+
+.button:hover {
+  box-shadow: 0px 10px 29px -10px rgba(0,0,0,1);
+  -webkit-box-shadow: 0px 10px 29px -10px rgba(0,0,0,1);
+  -moz-box-shadow: 0px 10px 29px -10px rgba(0,0,0,1);
+}
+
+.centered-text {
+  text-align: center;
+}
+
+input {
+  border: none;
+  padding: 10px;
+  border-radius: 5px;
+  margin: auto;
+  display: block;
+}
+
+.button {
+  border-radius: 10px;
+  padding: 5px 10px;
+  margin: 5px;
+  transition: all 0.5s;
+}
+.cancel-button {
+  background-color: #FF4E00;
+}
+
+.confirm-button {
+  background-color: #8EA604
+}
+
+.confirm-button:hover {
+  background-color: #CCEF06;
+}
+
+.cancel-button:hover {
+  background-color: #FF7E47;
+}
+
+.add-category {
+  position: relative;
+  width: 100%;
+  height: 48px;
+  border: 1px solid blue;
+  padding: none;
+  margin: none;
+  display: none;
+}
+
+.new-block {
+  background-color: #ffff;
+  border-radius: 10px;
+  margin: auto;
+  opacity: 1;
+  width: 60%;
+  padding: 20px;
+  -webkit-box-shadow: 0px 20px 50px -1px rgba(0,0,0,0.8); 
+  box-shadow: 0px 20px 50px -1px rgba(0,0,0,0.8);
+}
+
+
+.add-category svg {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  /* transform: translate(-50%, 0); */
+  transform: scale(0.5);
+  fill: #ffffff;
+  border: 1px solid red;
+  /* width: 20px;
+  height: 20px; */
 }
 
 .title-container {
@@ -21,6 +124,18 @@
     justify-content: center;
     flex-direction: column;
 
+}
+
+.editMenu {
+  background-color: #ffffff;
+  opacity: 0.75;
+  position: fixed;
+  left: 0;
+  top: 0;
+  border: 1px solid blue;
+  width: 100%;
+  height: 100%;
+  display: none;
 }
 
 .sub-title {
@@ -123,4 +238,13 @@ body {
   width: 100%;
   height: 100vh;
   margin: 0;
+}
+
+.new-block-body {
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.new-block-heading-container {
+  margin-bottom: 20px;
 }

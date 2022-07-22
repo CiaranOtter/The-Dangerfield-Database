@@ -32,17 +32,26 @@ It goes hand in hand with the script.js file and styles.css file -
 
     <script src="script.js" type="module"></script>
 </head>
-<body>
+<body onload="Initialise()">
     <div id="main-heading" class="title-container">
         <div class="sub-title">THE</div>
         <div class="main-title">DANGERFIELD DATABASE</div>
     </div>
 
+    <div class="button logout" id="admin-logout" onclick="logout()">
+      Logout
+    </div>
+
     <div class="body-container">
+
     
-    <aside class="menu-closed">
+    <aside id="side-menu" class="menu-closed">
         <p class="menu-title"> Menu </p>
-        <a href="javascript:void(0)">
+
+        <div id="side-menu-container">
+
+        </div>
+        <!-- <a href="javascript:void(0)">
           <i class="fa fa-user-o" aria-hidden="true"></i>
           My drive
         </a>
@@ -61,7 +70,11 @@ It goes hand in hand with the script.js file and styles.css file -
         <a href="javascript:void(0)">
           <i class="fa fa-trash-o" aria-hidden="true"></i>
           Test
-        </a>
+        </a> -->
+
+        <div id="add-category" class="add-category" onclick="addBlock('new-Category')">
+          <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48"><path d="M22.65 34h3v-8.3H34v-3h-8.35V14h-3v8.7H14v3h8.65ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"/></svg>
+        </div>
       </aside>
 
       <div class="content-container">
@@ -70,8 +83,55 @@ It goes hand in hand with the script.js file and styles.css file -
 
     </div>
 
-    <div id="add-block" class="add-block" onclick="newBlock()">
+    <div id="add-block" class="add-block" onclick="addBlock('new-Block')">
       <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48"><path d="M22.65 34h3v-8.3H34v-3h-8.35V14h-3v8.7H14v3h8.65ZM24 44q-4.1 0-7.75-1.575-3.65-1.575-6.375-4.3-2.725-2.725-4.3-6.375Q4 28.1 4 23.95q0-4.1 1.575-7.75 1.575-3.65 4.3-6.35 2.725-2.7 6.375-4.275Q19.9 4 24.05 4q4.1 0 7.75 1.575 3.65 1.575 6.35 4.275 2.7 2.7 4.275 6.35Q44 19.85 44 24q0 4.1-1.575 7.75-1.575 3.65-4.275 6.375t-6.35 4.3Q28.15 44 24 44Zm.05-3q7.05 0 12-4.975T41 23.95q0-7.05-4.95-12T24 7q-7.05 0-12.025 4.95Q7 16.9 7 24q0 7.05 4.975 12.025Q16.95 41 24.05 41ZM24 24Z"/></svg>
+    </div>
+
+    <div class="editMenu" id="editMenu">
+
+      <div id="edit-menyu-close-button" class="close-edit-menu" onclick="hideEditMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" height="48" width="48" fill="#ffffff"><path d="m12.45 37.65-2.1-2.1L21.9 24 10.35 12.45l2.1-2.1L24 21.9l11.55-11.55 2.1 2.1L26.1 24l11.55 11.55-2.1 2.1L24 26.1Z"/></svg>
+      </div>
+      
+      <div id="new-Category" class="new-block">
+        <div class="sub-title centered-text" style="padding-bottom: 10px">New Category</div>
+
+        <input id="new-Cat-Input" type="text">
+
+        <div id="new-cat-warn" style="color: #EC9F05"></div>
+        <div class="button-container" id="new-Category-button-container">
+          <div id="new-cat-cancel" class="cancel-button button" onclick="hideEditMenu()">cancel</div>
+          <div id="new-cat-save" class="confirm-button button" onclick="saveCategory()">confirm</div>
+        </div>
+        
+
+      </div>
+
+      <div id="new-Block" class="new-block-container">
+        
+        <div class="new-block">
+          <div class="new-block-heading-container">
+            <div class="main-title centered-text">New lesson Template</div>
+            <div class="sub-title centered-text">Sub heading</div>
+          </div>
+          <div class="new-block-body">
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
+            <img src="./img/template.jpg" width="200">
+          </div>
+        </div>
+        <div id="design-side-menu" class="design-side-menu">
+          <div class="sub-title">Design a lesson:</div>
+  
+        </div>
+
+        <div class="button-container" id="new-Category-button-container">
+          <div id="new-cat-cancel" class="cancel-button button" onclick="hideEditMenu()">cancel</div>
+          <div id="new-cat-save" class="confirm-button button" >confirm</div>
+        </div>
+      </div>
+
+      
+
     </div>
 </body>
 </html>
